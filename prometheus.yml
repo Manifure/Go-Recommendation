@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "user_service"
+    static_configs:
+      - targets: ["host.docker.internal:8080"]
+
+  - job_name: "product_service"
+    static_configs:
+      - targets: ["host.docker.internal:8081"]
+
+  - job_name: "recommendation_service"
+    static_configs:
+      - targets: ["host.docker.internal:8082"]
+
+  - job_name: "analytics_service"
+    static_configs:
+      - targets: ["host.docker.internal:8083"]
